@@ -138,11 +138,13 @@ socket.on("user-disconneted", async (userId) => {
 });
 
 createRoomBtn.addEventListener("click", async () => {
-  roomCodeInp.value === ""
-    ? (roomCode = Math.random().toString(36).slice(2, 7))
-    : (roomCode = roomCodeInp.value);
-  await getLocalMedia();
-  socket.emit("create-room", roomCode);
+  if (roomCodeInp.value === "") {
+    alert("Room code cannot be empty");
+  } else {
+    roomCode = roomCodeInp.value;
+    await getLocalMedia();
+    socket.emit("create-room", roomCode);
+  }
 });
 
 joinRoomBtn.addEventListener("click", async () => {
