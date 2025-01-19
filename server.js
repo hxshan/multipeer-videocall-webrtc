@@ -22,10 +22,10 @@ io.on('connection',(socket)=>{
     socket.on('join-room',async(roomCode)=>{
         //console.log('room code '+roomCode)
         if(rooms.includes(roomCode)){
+            socket.to(roomCode).emit('user-joined',socket.id)
             await socket.join(roomCode)
-            socket.broadcast.emit('user-joined',socket.id)
         }else{
-            socket.emit('room-404',roomCode)
+            socket.to(roomCode).emit('room-404',roomCode)
         }
     })
 
@@ -40,6 +40,12 @@ io.on('connection',(socket)=>{
         //console.log('candidate ' ,candidate, id)
         socket.to(id).emit('candidate',candidate,socket.id)
     })
+
+    socket.on('disconnected',async(roomCode,userId)=>{
+        socket.leave(roomCode)
+        socket.to(roomCode).emit('user-disconneted',userId)
+    })
+
 
 })
 
