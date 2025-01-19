@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="inputcon">
+        <p id="userId"></p>
+        <input type="text" id="roomInput" placeholder="Enter a Room code"/>
+        <button type="button" id="createRoom" class="btn-blue">Create Room</button> 
+        <button type="button" id="joinRoom" class="btn-blue">Join Room</button>
+    </div>
+    <div id="streams">
+        <video class="video" src="" id="local" autoplay></video>
+    </div>
+    <div id="controls">
+        <button type="button" id="camera" class="btn-blue">Camera</button>
+        <button type="button" id="mic" class="btn-blue">Mic</button>
+        <button type="button" id="disconnect" class="btn-red">Disconnect</button>
+    </div>
+
+
+    <script type="module" src="client.js" defer></script>
+    <script src="/socket.io/socket.io.js"></script>
+</body>
+</html>

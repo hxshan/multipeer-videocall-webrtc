@@ -1,0 +1,65 @@
+#videos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.Rooms{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 300px;
+    height: 200px;
+    overflow-y: scroll;
+    gap: 2rem;
+}
+.video{
+    background-color: black;
+    width: 100%;
+    height: 250px;
+}
+.btn-red {
+    background: linear-gradient(45deg, #ff6b6b, #f94d6a);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    margin: 1rem 0rem 1rem 0rem;
+  }
+  
+.btn-blue {
+    background: linear-gradient(45deg, #4a9be7, #167afc);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    margin: 1rem 0rem 1rem 0rem;
+  }
+  .btn-green {
+    background: linear-gradient(45deg, #4ae74a, #4de021);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    margin: 1rem 0rem 1rem 1rem;
+  }
+  button:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  #inputcon{
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+  }
+  #roomInput{
+    width: 270px;
+    height: 32px;
+  }
+
